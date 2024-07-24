@@ -1,0 +1,35 @@
+<!--
+Build an HTML page that has an input field in which a user can type a name and an Add button. Upon
+typing an name and clicking the Add button, the page displays all names that have added since the
+beginning in ascending order. 
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 3</title>
+        <script>
+            function names() {
+                const nameInput = document.getElementById('Input');
+                const name = nameInput.value.trim();
+                const namehistory = document.getElementById('namehistory');
+                const namelist = document.createElement('li'); //creates a new list item 
+
+                namelist.textContent = name; // adds the color name to the choice
+                namehistory.appendChild(namelist); //adds the choice to the history
+
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Enter a name:</h3>
+
+        <input type="text" id="Input" required>
+
+        <button onclick="names()">Add</button>
+        
+        <h3>Names added:</h3>
+        <ul id="namehistory"></ul>
+
+    </body>
+</html>
